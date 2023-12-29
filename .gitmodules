@@ -1,0 +1,9 @@
+[submodule "DirectXTK"]
+	path = DirectXTK
+	url = https://github.com/microsoft/DirectXTK.git
+[submodule "tinygltf"]
+	path = tinygltf
+	url = https://github.com/syoyo/tinygltf.git
+[submodule "generator"]
+	path = generator
+	url = https://github.com/ilmola/generator.git

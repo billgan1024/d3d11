@@ -1,0 +1,23 @@
+{
+  "files.associations": {
+    "random": "cpp",
+    "iostream": "cpp",
+    "xmemory": "cpp",
+    "xstring": "cpp",
+    "regex": "cpp",
+    "cmath": "cpp",
+    "numbers": "cpp",
+    "charconv": "cpp",
+    "chrono": "cpp",
+    "format": "cpp",
+    "locale": "cpp",
+    "ostream": "cpp",
+    "xlocale": "cpp",
+    "*.tpp": "cpp",
+    "algorithm": "cpp",
+    "functional": "cpp",
+    "xutility": "cpp",
+    "vector": "cpp",
+    "*.rh": "cpp"
+  }
+}
