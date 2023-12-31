@@ -10,3 +10,4 @@ void printc(T t, A... a) {
   cout << t << " ";
   printc(a...);
 }
+

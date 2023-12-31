@@ -6,12 +6,14 @@ gltf::TinyGLTF loader{};
 gltf::Model LoadModel(string file_name) {
   gltf::Model model;
   string err, warn;
+  bool success;
   if (file_name.substr(file_name.find('.')) == ".glb") {
-    loader.LoadBinaryFromFile(&model, &err, &warn, file_name);
+    success = loader.LoadBinaryFromFile(&model, &err, &warn, "models/" + file_name);
   } else {
-    loader.LoadASCIIFromFile(&model, &err, &warn, file_name);
+    success = loader.LoadASCIIFromFile(&model, &err, &warn, "models/" + file_name);
   }
   if (!err.empty()) error(err.c_str());
   if (!warn.empty()) error(warn.c_str());
+  if(!success) error("failed to load gltf file");
   return model;
 }

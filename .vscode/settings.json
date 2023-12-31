@@ -18,6 +18,9 @@
     "functional": "cpp",
     "xutility": "cpp",
     "vector": "cpp",
-    "*.rh": "cpp"
+    "*.rh": "cpp",
+    "unordered_map": "cpp",
+    "filesystem": "cpp",
+    "thread": "cpp"
   }
 }

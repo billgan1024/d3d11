@@ -8,7 +8,7 @@ void error(const char *msg) {
 
 // note that strings are just a buffer of bytes
 // string is ASCII while wstring is UTF-8 (each character is 1-4 bytes, but it's
-// backwards compatible with ASCII)
+// prefix-free and backwards compatible with ASCII)
 wstring to_wstring(string s) {
   return wstring{s.begin(), s.end()};
 }
@@ -16,7 +16,6 @@ wstring to_wstring(string s) {
 void check(bool condition) {
   if (!condition) {
     check(HRESULT_FROM_WIN32(GetLastError()));
-    // error(_com_error{hr}.ErrorMessage());
   }
 }
 
