@@ -13,8 +13,8 @@ wstring to_wstring(string s) {
   return wstring{s.begin(), s.end()};
 }
 
-void check(bool condition) {
-  if (!condition) {
+void check(bool b) {
+  if (!b) {
     check(HRESULT_FROM_WIN32(GetLastError()));
   }
 }

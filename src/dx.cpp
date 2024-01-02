@@ -2,14 +2,21 @@
 #include "misc.h"
 
 // loads shaders/<name>
-ID3DBlob *LoadShaderBinary(string name) {
-  ID3DBlob *blob;
-  check(D3DReadFileToBlob((L"shaders/" + to_wstring(name)).c_str(), &blob));
-  return blob;
+ID3DBlob *LoadShaderBinary(string s) {
+  ID3DBlob *b;
+  check(D3DReadFileToBlob((L"shaders/" + to_wstring(s)).c_str(), &b));
+  return b;
 }
 
-ID3D11InputLayout *CreateInputLayout(ID3D11Device *device, ID3DBlob *vs_blob, vector<D3D11_INPUT_ELEMENT_DESC> input_elements) {
-  ID3D11InputLayout *input_layout;
-  check(device->CreateInputLayout(input_elements.data(), input_elements.size(), vs_blob->GetBufferPointer(), vs_blob->GetBufferSize(), &input_layout));
-  return input_layout;
+ID3D11Buffer *CreateConstantBuffer(ID3D11Device *device, int size) {
+  ID3D11Buffer *b;
+  D3D11_BUFFER_DESC bd;
+  bd.ByteWidth = size;
+  bd.Usage = D3D11_USAGE_DYNAMIC;
+  bd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+  bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+  bd.MiscFlags = 0;
+  bd.StructureByteStride = 0;
+  check(device->CreateBuffer(&bd, NULL, &b));
+  return b;
 }

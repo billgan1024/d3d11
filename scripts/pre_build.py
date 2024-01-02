@@ -1,11 +1,12 @@
 import sys
 import shutil
+import os
 from utils import *
 
 type = sys.argv[1]
 
 # append "#pragma once" to all header files if not already present
-for f in dir("src"):
+for f in os.listdir("src"):
   if f.endswith(".h"):
     s = read(f"src/{f}")
     if not s.startswith("#pragma once"):

@@ -1,21 +1,23 @@
 #pragma once
 #include "pch.h"
 
-wstring to_wstring(string s);
+#define countof(a) (sizeof(a) / sizeof(a[0]))
 
-void error(const char *msg);
+wstring to_wstring(string);
 
-void check(bool condition);
+void error(const char *);
 
-void check(HRESULT hr);
+void check(bool);
 
-int sys(string cmd);
+void check(HRESULT);
+
+int sys(string);
 
 template <class... T>
-void info(T... t);
+void info(T...);
 
 template <class T, class... A>
-void printc(T t, A... a);
+void printc(T, A...);
 
 void printc();
 

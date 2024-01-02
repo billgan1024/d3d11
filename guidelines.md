@@ -11,8 +11,9 @@ this logic recursively, we get multidimensional arrays.
   - `int x = 0; float f = 0.0` (for simplicity, use any numeric literal for any numeric type. 
   recall that integral types convert between each other by shrinking/expanding the most significant part,
   and that signed <-> unsigned preserves bit pattern)
-  - `vector<int> v = vector<int>{1, 2, 3};` for constructing via an initializer list. For some reason,
-  `{1, 2, 3}` makes the compiler unable to deduce the type of the
+  - only use {} for initializing C-style arrays. use other forms for everything else
+  <!-- - `vector<int> v = vector<int>{1, 2, 3};` for constructing via an initializer list. For some reason, -->
+  <!-- `{1, 2, 3}` makes the compiler unable to deduce the type of the -->
   initializer list in certain contexts (e.g. with operator overloading). Note that C-style arrays cannot be
   initialized this way, so don't use them in this context.
   - `A a = A(...);` for accessing a constructor. This avoids "most vexing parse" and this is also the only 
